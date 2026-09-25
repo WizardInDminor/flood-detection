@@ -1,0 +1,68 @@
+PROJECT_NAME           = "Flood Detection System"
+PROJECT_BRIEF          = "ESP32 Flood Detection Capstone Firmware"
+
+# ------------------------------------------------------------
+# Source
+# ------------------------------------------------------------
+
+INPUT                  = flood-detection
+RECURSIVE              = YES
+
+FILE_PATTERNS          = *.h \
+                         *.hpp \
+                         *.c \
+                         *.cpp \
+                         *.ino
+
+# Treat Arduino sketches as C++
+EXTENSION_MAPPING      = ino=C++
+
+# ------------------------------------------------------------
+# Documentation extraction
+# ------------------------------------------------------------
+
+EXTRACT_ALL            = NO
+EXTRACT_PRIVATE        = NO
+EXTRACT_STATIC         = YES
+
+JAVADOC_AUTOBRIEF      = YES
+MULTILINE_CPP_IS_BRIEF = YES
+
+# Include source code in generated documentation
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = NO
+REFERENCED_BY_RELATION = YES
+REFERENCES_RELATION    = YES
+
+# ------------------------------------------------------------
+# Output
+# ------------------------------------------------------------
+
+OUTPUT_DIRECTORY       = build/doxygen
+
+GENERATE_HTML          = YES
+HTML_OUTPUT            = html
+
+GENERATE_LATEX         = NO
+
+# ------------------------------------------------------------
+# General
+# ------------------------------------------------------------
+
+QUIET                  = NO
+WARNINGS               = YES
+WARN_IF_UNDOCUMENTED   = NO
+WARN_IF_DOC_ERROR      = YES
+
+# ------------------------------------------------------------
+# Arduino / C++ friendliness
+# ------------------------------------------------------------
+
+OPTIMIZE_OUTPUT_FOR_C  = NO
+CPP_CLI_SUPPORT        = NO
+
+# ------------------------------------------------------------
+# Diagrams
+# ------------------------------------------------------------
+
+HAVE_DOT               = NO

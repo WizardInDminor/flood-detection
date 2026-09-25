@@ -1,0 +1,19 @@
+# Generated documentation
+build/
+
+# C++
+*.o
+*.obj
+*.exe
+*.out
+*.dll
+*.so
+*.dylib
+
+# Arduino build files
+*.elf
+*.bin
+*.hex
+
+# Doxygen
+build/
