@@ -50,12 +50,17 @@ title: "Program Flow"
 flowchart TD  
 
     A[Power On] --> B[Initializations]
-    B -->C[Read Water Level x5]
+    B -->M[Init Display]
+    B -->K[Init Sensor Pins]
+    B -.->L[Init Telemetry]
+    M -->C[Read Water Level x5]
+    K -->C
     C -->D{Valid Reading Available?}
     D -->|No| E[Discard Reading]
     D -->|Yes| F[Calculate Water Level]
     F -->G[Sort & Median]
     G -->H[Determine Alert Status]
+    H -.-> J[Send Data to Blynk]
     H -->I[Display Water Level and Status]
     I -->C
 ```

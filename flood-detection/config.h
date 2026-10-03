@@ -111,7 +111,9 @@ constexpr float LEVEL_WARNING_CM = 100.0f;
  */
 constexpr float LEVEL_DANGER_CM = 140.0f;
 
-/** @brief Planned rapid-rise threshold, in cm per minute. */
+/** @brief Planned rapid-rise threshold, in cm per minute.
+ * @note Prototype value. Confirm for the installation.
+ */
 constexpr float RAPID_RISE_CM_PER_MIN = 5.0f;
 
 // ============================================================
@@ -122,10 +124,10 @@ constexpr float RAPID_RISE_CM_PER_MIN = 5.0f;
 constexpr uint32_t SENSOR_READ_INTERVAL_MS = 2000;
 
 /** @brief Target display refresh interval, in ms. */
-constexpr uint32_t DISPLAY_REFRESH_MS = 1000;
+constexpr uint32_t DISPLAY_UPDATE_INTERVAL_MS = 1000;
 
 /** @brief Target telemetry interval, in ms. */
-constexpr uint32_t TELEMETRY_PUBLISH_MS = 10000;
+constexpr uint32_t TELEMETRY_PUBLISH_INTERVAL_MS = 10000;
 
 /** @brief Number of pings per filtered reading. */
 constexpr int SENSOR_MEDIAN_SAMPLES = 5;

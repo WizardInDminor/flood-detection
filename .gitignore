@@ -1,6 +1,9 @@
 # Generated documentation
 build/
 
+# Secrets
+secrets.h
+
 # C++
 *.o
 *.obj

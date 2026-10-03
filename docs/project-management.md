@@ -16,3 +16,15 @@
 - Rate of rise calculations
   - Determine time window.
   - Determine what ROR is considered "Normal" vs "Warning" vs "Danger"
+
+## Final Deliverables at End of 435:
+
+- Prototype
+- Report
+- Presentation
+- Poster
+
+### Needed For Introduction
+
+- Pull news clippings for flooding in the Norfolk and Virgia Beach Area
+- 
