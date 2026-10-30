@@ -287,44 +287,6 @@ The firmware should print startup information and sensor measurement data.
 
 ---
 
-# Command-Line Development
-
-Arduino CLI provides an alternative way to compile the project and inspect installed dependencies.
-
-The development environment used for this project includes Arduino CLI version **1.5.1**.
-
-## Check Installed Versions
-
-Run the following commands from a terminal:
-
-```powershell
-arduino-cli version
-arduino-cli core list
-arduino-cli lib list
-```
-
-These commands display the CLI version, installed board packages, and libraries visible to Arduino CLI.
-
-**Note:** Arduino IDE and Arduino CLI may use different library directories or configuration settings. If a library works in the Arduino IDE but is not detected by Arduino CLI, verify the configured sketchbook and library paths before reinstalling it.
-
-## Compile Using Arduino CLI
-
-Navigate to the directory containing `flood-detection.ino`.
-
-Run:
-
-```powershell
-arduino-cli compile --fqbn esp32:esp32:esp32 .
-```
-
-This command compiles the sketch for the ESP32 Dev Module board profile.
-
-A successful compilation confirms that Arduino CLI can resolve the required dependencies and build the firmware.
-
-The Arduino CLI environment must have access to the required U8g2 and Blynk libraries.
-
----
-
 # Firmware Organization
 
 The firmware is divided into modules based on their responsibilities.
@@ -502,7 +464,7 @@ test_sketches/
 
 The current repository includes a display test sketch for verifying OLED communication and text output.
 
-Additional testing is needed to verify the ultrasonic sensor, measurement filtering, alert evaluation, and telemetry under different operating conditions.
+Additional testing is needed to verify the ultrasonic sensor, measurement filtering, alert evaluation, and telemetry under different operating conditions.  These have been verified through testing of the full end to end operation of the current codebase.
 
 Refer to the Testing section of the MkDocs documentation for test procedures and expected results.
 
@@ -521,12 +483,13 @@ The current firmware includes the core functionality required for water-level mo
 
 Further development and verification will focus on confirming measurement reliability, validating installation-specific thresholds, and evaluating additional alert functions.
 
-Planned improvements include local status LEDs, audible warnings, and rate-of-rise monitoring.
+Stretch goals (possibly out of scope for this project) include local status LEDs, audible warnings, and rate-of-rise monitoring.
 
 ---
 
 # Repository
 
-**GitHub:** https://github.com/WizardInDminor/flood-detection
+**GitHub:** https://github.com/WizardInDminor/flood-detection  
+**Hosted Documentation Website:** https://wizardindminor.github.io/flood-detection/
 
 This repository contains the firmware, hardware test sketches, and supporting documentation for the Flood Detection System capstone project.
