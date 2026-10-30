@@ -33,7 +33,9 @@ jobs:
         run: mkdocs build
 
       - name: Build Doxygen
-        run: doxygen Doxyfile
+        run: |
+          mkdir -p build/doxygen
+          doxygen Doxyfile
 
       - name: Add Doxygen to the site
         run: cp -r build/doxygen/html site/api

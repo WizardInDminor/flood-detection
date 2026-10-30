@@ -11,7 +11,7 @@ namespace sensor {
 
 /**
  * @brief Sets up the sensor pins with the trigger LOW.
- * @note Call once in setup before taking readings.
+ * @note Called once in setup before taking readings.
  */
 void begin();
 
