@@ -1,0 +1,21 @@
+site_name: EET Capstone
+theme:
+  name: material
+
+nav:
+  - Home: README.md
+  - Architecture: architecture.md
+  - API Reference: api/index.html
+  - Hardware: hardware.md
+  - Firmware: firmware.md
+  - Communications: communications.md
+  - Telemetry: telemetry.md
+  - Testing: testing.md
+  - Project Management: project-management.md
+
+markdown_extensions:
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format

@@ -1,5 +1,5 @@
 /**
- * @file telemetery.cpp
+ * @file telemetry.cpp
  * @brief Telemetry functions for the flood detection system using Blynk.
  */
 

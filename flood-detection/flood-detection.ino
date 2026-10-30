@@ -1,3 +1,8 @@
+/**
+ * @file flood-detection.ino
+ * @brief Main sketch for the flood detection system.
+ */
+
 #include <Arduino.h>
 #include "alerts.h"
 #include "config.h"
@@ -5,28 +10,25 @@
 #include "display.h"
 #include "telemetry.h"
 
-/**
- * @brief Global variables for the flood detection system.
- * @details These variables store the current water level, the alert status, and the timestamps for the last sensor read, display update, and telemetry publish.
- */
-float waterLevel = 0.0;
-alerts::State status = alerts::State::NORMAL;
-uint32_t tSensor = 0;
-uint32_t tDisplay = 0;
-uint32_t tTelemetry = 0;
+
+float waterLevel = 0.0;                              ///< Latest water level in centimeters
+alerts::State status = alerts::State::NORMAL;        ///< Current alert status
+uint32_t tSensor = 0;                                ///< Timestamp of the last sensor read
+uint32_t tDisplay = 0;                               ///< Timestamp of the last display update
+uint32_t tTelemetry = 0;                             ///< Timestamp of the last telemetry publish
 
 /**
  * @brief Setup function of the flood detection system.
  * @details This function initializes the serial communication, the ultrasonic sensor, the OLED display, and the telemetry system. It also prints a message indicating that the setup is complete.
- * @note This function should be called once at the beginning of the program.
+ * @note This function is called once at the beginning of the program.
  */
 
 void setup() {
-    Serial.begin(115200);   // Initialize the serial communication for debugging
-    sensor::begin();        // Initialize the ultrasonic sensor
-    display::begin();       // Initialize the OLED display
-    telemetry::begin();     // Initialize the telemetry system
-    Serial.println("Setup complete");  // Print a message indicating that setup is complete
+    Serial.begin(115200);               // Initialize the serial communication for debugging
+    sensor::begin();                    // Initialize the ultrasonic sensor
+    display::begin();                   // Initialize the OLED display
+    telemetry::begin();                 // Initialize the telemetry system
+    Serial.println("Setup complete");   // Print a message indicating that setup is complete
 }
 
 /**
@@ -41,6 +43,10 @@ void loop() {
     uint32_t now = millis();
     telemetry::run();
 
+    /**
+     * @par Sensor read
+     * Every SENSOR_READ_INTERVAL_MS, reads the water level and re-evaluates the alert state.
+     */
     if (now - tSensor >= SENSOR_READ_INTERVAL_MS) {
         tSensor = now;
         waterLevel = sensor::readWaterLevelCm();  // Read the current water level from the ultrasonic sensor
@@ -48,11 +54,19 @@ void loop() {
         Serial.printf("Water Level: %.2f cm, Status: %s\n", waterLevel, alerts::name(status));
     }
 
+    /**
+     * @par Display update
+     * Every DISPLAY_UPDATE_INTERVAL_MS, shows the latest water level on the OLED.
+     */
     if (now - tDisplay >= DISPLAY_UPDATE_INTERVAL_MS) {
         tDisplay = now;
         display::showWaterLevel(waterLevel);          
     }
-
+    
+    /**
+     * @par Telemetry publish
+     * Every TELEMETRY_PUBLISH_INTERVAL_MS, sends the water level and alert state.
+     */
     if (now - tTelemetry >= TELEMETRY_PUBLISH_INTERVAL_MS) {
         tTelemetry = now;
         telemetry::publish(waterLevel, status);
