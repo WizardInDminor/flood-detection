@@ -30,7 +30,8 @@ The ESP32 generates a short trigger pulse and then measures the duration of the 
 The firmware uses the following calculation:
 
 $$
-Distance_{cm} = \frac{Duration_{\mu s} \times 0.0343}{2}
+\text{Distance (cm)} =
+\frac{\text{Duration }(\mu s) \times 0.0343\ \text{cm}/\mu s}{2}
 $$
 
 The value `0.0343` represents the approximate speed of sound in centimeters per microsecond.
@@ -100,13 +101,17 @@ Once the distance measurement has been filtered, the firmware calculates the wat
 The calculation uses the known mounting height of the sensor:
 
 $$
-WaterLevel_{cm} = MountHeight_{cm} - Distance_{cm}
+\text{WaterLevel}_{cm} 
+=
+\text{MountHeight}_{cm} 
+-
+\text{Distance}_{cm}
 $$
 
 For example, if the sensor is mounted 200 cm above the zero-water reference and measures a distance of 125 cm:
 
 $$
-WaterLevel = 200 - 125 = 75\text{ cm}
+\text{WaterLevel} = 200 - 125 = 75\text{ cm}
 $$
 
 The calculated water level is 75 cm.

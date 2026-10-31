@@ -73,9 +73,9 @@ The display must also be connected to an appropriate power supply and common gro
 
 The supply voltage should be verified against the specifications of the particular OLED module being used.
 
-## Planned Alert Outputs
+## Reserved Alert Outputs
 
-The firmware reserves several GPIO connections for future local alert hardware.
+The firmware reserves several GPIO connections for possible future local alert hardware.
 
 | Device    | GPIO | Status   |
 | --------- | ---: | -------- |
@@ -85,9 +85,9 @@ The firmware reserves several GPIO connections for future local alert hardware.
 | Red LED   |   14 | Reserved |
 | Error LED |   13 | Reserved |
 
-These assignments are placeholders and have not been implemented as active outputs in the reviewed firmware.
+These assignments are placeholders and have not been implemented as active outputs in the firmware.
 
-The final design should verify GPIO availability, electrical requirements, and any necessary current-limiting or driver circuitry.
+The final design will need to verify GPIO availability, electrical requirements, and any necessary current-limiting or driver circuitry if these features are implemented.
 
 ## Sensor Installation
 

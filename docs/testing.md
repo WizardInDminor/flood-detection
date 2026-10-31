@@ -6,7 +6,7 @@ Testing is an important part of the Flood Detection System development process.
 
 The project combines hardware measurements, data processing, local display output, and wireless communication. Each of these components must operate correctly for the complete system to function as intended.
 
-Testing is organized into individual component verification and integrated system testing.
+Testing was organized into individual component verification and integrated system testing.
 
 The goal is to confirm that the system produces reasonable measurements, responds correctly to changes in water level, identifies measurement failures, and communicates its status reliably.
 
@@ -24,7 +24,9 @@ This approach makes troubleshooting easier because problems can be isolated to a
 
 The first stage is to confirm that the ESP32 can be programmed and communicate with the development computer.
 
-Verification should include successful firmware upload and serial communication.
+Verification should include successful firmware upload and serial communication.  
+
+ArduinoIDE offers example sketches such as "Blink" which will blink an onboard LED to help the user verify proper communications with the MCU.
 
 ### OLED Display
 
@@ -83,7 +85,7 @@ These are calculation test cases and do not represent recorded experimental resu
 
 ## Alert Threshold Testing
 
-The alert system should be tested at values immediately below, equal to, and above each threshold.
+The alert system should be tested at values immediately below, equal to, and above each threshold, or as close as reasonably possible given testing setups.
 
 This confirms that the correct status is selected when a threshold boundary is reached.
 
@@ -148,7 +150,7 @@ The system should be observed over multiple measurement cycles to evaluate stabi
 ## Test Documentation
 
 Testing results should be recorded in a consistent format.  
-The below table shows an example format, not a final formatting decision of the team.
+The below table shows an illustrative example, not a final formatting decision of the team.
 
 | Field           | Description                                   |
 | --------------- | --------------------------------------------- |

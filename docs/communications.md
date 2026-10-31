@@ -80,7 +80,7 @@ The system attempts to publish telemetry at the interval defined in `config.h`.
 
 If the Blynk connection is unavailable when a publication is attempted, the current implementation skips that transmission.
 
-No local telemetry storage or delayed retransmission mechanism is implemented in the reviewed firmware.
+No local telemetry storage or delayed retransmission mechanism is implemented in the current firmware.
 
 ## Communication Architecture
 
