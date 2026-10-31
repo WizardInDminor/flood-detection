@@ -25,7 +25,9 @@ uint32_t tTelemetry = 0;                        ///< Timestamp of the last telem
 void setup() {
     Serial.begin(115200);                       // Initialize the serial communication for debugging
     sensor::begin();                            // Initialize the ultrasonic sensor
+    Serial.println("Sensor Initialization Complete");
     display::begin();                           // Initialize the OLED display
+    Serial.println("Display Initialization Complete");
     telemetry::begin();                         // Initialize the telemetry system
     Serial.println("Setup complete");           // Print a message indicating that setup is complete
 }
@@ -68,8 +70,6 @@ void loop() {                                   // Main loop of the flood detect
      */
     if (now - tTelemetry >= TELEMETRY_PUBLISH_INTERVAL_MS) {   // Check if it's time to publish telemetry data - using this variable gives us precise control over the publish interval
         tTelemetry = now;                        // Update the timestamp of the last telemetry publish to the current time
-        telemetry::publish(waterLevel, status);  // Publish the current water level and alert status via the telemetry system
-    }
         telemetry::publish(waterLevel, status);  // Publish the current water level and alert status to the telemetry system
         Serial.printf("Telemetry Published\n");  // Print a message indicating that telemetry data has been published
     }
