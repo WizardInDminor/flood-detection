@@ -71,7 +71,6 @@ void loop() {                                   // Main loop of the flood detect
     if (now - tTelemetry >= TELEMETRY_PUBLISH_INTERVAL_MS) {   // Check if it's time to publish telemetry data - using this variable gives us precise control over the publish interval
         tTelemetry = now;                        // Update the timestamp of the last telemetry publish to the current time
         telemetry::publish(waterLevel, status);  // Publish the current water level and alert status to the telemetry system
-        Serial.printf("Telemetry Published\n");  // Print a message indicating that telemetry data has been published
     }
     delay(1000);                                 // Delay for 1 second before the next loop iteration - This is used for spacing out readings while testing.  Especially useful for observing and correlating serial output, sensor display, and logic level analysis.
 }
