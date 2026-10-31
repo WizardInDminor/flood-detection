@@ -73,9 +73,9 @@ The following versions were recorded from a working development environment in O
 
 These versions have been installed in the Arduino IDE development environment used for the project.
 
-The firmware has been reported to compile and run successfully using this environment.
+The firmware has compiled and run successfully using this environment.
 
-Other versions may be compatible, but they have not been verified as part of this dependency record.
+Other versions may be compatible, but they have not been verified as part of this documentation.
 
 ### Included Libraries
 
@@ -262,7 +262,7 @@ Keep the `.ino`, `.h`, and `.cpp` files in the same `flood-detection` folder.
 
 Under **Tools > Board**, select the appropriate ESP32 development board.
 
-For the current ESP-WROOM-32 prototype, the **ESP32 Dev Module** profile may be used if it matches the development board.
+For the current ESP-WROOM-32 prototype, the **ESP32 Dev Module** profile may be used.
 
 Select the correct serial port under **Tools > Port**.
 
