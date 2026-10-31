@@ -55,6 +55,7 @@ void publish(float levelCm, alerts::State state) {
     if (!Blynk.connected()) return;                         // Do not attempt to publish if not connected to Blynk
     Blynk.virtualWrite(VPIN_LEVEL, levelCm);                // Publish water level to Blynk
     Blynk.virtualWrite(VPIN_STATE, alerts::name(state));    // Publish alert state to Blynk
+    Serial.printf("Telemetry Published\n");  // Print a message indicating that telemetry data has been published
 }
 
 /**

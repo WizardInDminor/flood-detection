@@ -15,8 +15,10 @@ namespace telemetry {
 void begin();                                       // public function to initialize the telemetry system
 
 /**
- * @brief Runs the telemetry system.
- * @details Handles the periodic tasks required to maintain the connection and publish telemetry data.
+ * @brief Processes Blynk communication events.
+ * @details Calls Blynk.run() when Wi-Fi is connected.
+ * Periodic water-level publication is handled separately
+ * by telemetry::publish().
  */
 void run();                                        // public function to run the telemetry system
 

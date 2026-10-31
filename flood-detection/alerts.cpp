@@ -15,9 +15,9 @@ namespace alerts {
  */
 State evaluate(float waterLevelCm) {
     if (waterLevelCm < 0)                   return State::SENSOR_FAULT;     // Sensor fault if water level is negative
-    if (waterLevelCm >= LEVEL_DANGER_CM)       return State::DANGER;        // Danger if water level exceeds danger threshold
-    if (waterLevelCm >= LEVEL_WARNING_CM)      return State::WARNING;       // Warning if water level exceeds warning threshold
-    if (waterLevelCm >= LEVEL_CAUTION_CM)      return State::CAUTION;       // Caution if water level exceeds caution threshold
+    if (waterLevelCm >= LEVEL_DANGER_CM)       return State::DANGER;        // Danger if water level meets or exceeds danger threshold
+    if (waterLevelCm >= LEVEL_WARNING_CM)      return State::WARNING;       // Warning if water level meets or exceeds warning threshold
+    if (waterLevelCm >= LEVEL_CAUTION_CM)      return State::CAUTION;       // Caution if water level meets or exceeds caution threshold
     return State::NORMAL;                                                   // Normal if water level does not exceed any thresholds
 }
 
